@@ -10,7 +10,7 @@ class CNN(nn.Module):
 
         self.layer1 = nn.Sequential(
             nn.Dropout(p = 0.25),
-            nn.Conv1d(9, 32, kernel_size = 8, stride = 3, padding = 3),
+            nn.Conv1d(6, 32, kernel_size = 8, stride = 3, padding = 3),
             nn.ReLU(),
             nn.MaxPool1d(3, 3)
         )#output size = 111

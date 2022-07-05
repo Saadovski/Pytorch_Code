@@ -51,7 +51,7 @@ def get_dataset(reduced_frequency = False, target_frequency_ratio = 1):
         Pitch =  [elem["pitch"] for elem in sample]
         Roll =   [elem["roll"] for elem in sample]
 
-        accelerations_and_rotations = [Acc_x, Acc_y, Acc_z, Gyro_x, Gyro_y, Gyro_z, Azimuth, Pitch, Roll]
+        accelerations_and_rotations = [Acc_x, Acc_y, Acc_z, Gyro_x, Gyro_y, Gyro_z]
 
         label = sample[0]["label"]
 
