@@ -1,7 +1,7 @@
 import torch
 import torchvision
 from torch.utils.data import Dataset
-from CSV_to_List import total_dataset
+import CSV_to_List
 import torchvision.transforms as transforms
 
 labels = {"STD" : 0,
@@ -22,7 +22,7 @@ labels = {"STD" : 0,
           
 class MobifallData(Dataset):
     def __init__(self):
-        self.samples = total_dataset
+        self.samples = CSV_to_List.get_dataset()
 
     def __len__(self):
         return len(self.samples)
