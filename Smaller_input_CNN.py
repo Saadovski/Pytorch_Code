@@ -14,19 +14,19 @@ class CNN(nn.Module):
             nn.Conv1d(6, 32, kernel_size = 4, stride = 2, padding = 1),
             nn.ReLU(),
             nn.MaxPool1d(2, 2)
-        )#output size = 87
+        )#output size = 62
 
         self.layer2 = nn.Sequential(
             nn.Conv1d(32, 128, kernel_size = 4, stride = 2, padding = 1),
             nn.ReLU(),
             nn.MaxPool1d(2, 2)
-        )#output size = 21
+        )#output size = 15
 
         self.layer3 = nn.Sequential(
             nn.Conv1d(128, 512, kernel_size = 3, stride = 2, padding = 1),
             nn.ReLU(),
             nn.MaxPool1d(2, 2)
-        )#output size = 5
+        )#output size = 4
 
 
         self.layer4 = nn.Sequential(
@@ -34,7 +34,7 @@ class CNN(nn.Module):
             nn.ReLU(),
             nn.Linear(512, 128),
             nn.ReLU(),
-            nn.Linear(128, 15)
+            nn.Linear(128, 16)
         )
 
     def forward(self, x):

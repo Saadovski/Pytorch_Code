@@ -18,11 +18,14 @@ labels = {"STD" : 0,
           "FOL" : 11,
           "FKL" : 12,
           "BSC" : 13,
-          "SDL" : 14}
+          "SDL" : 14
+          #"PFF" : 15
+          }
           
 class MobifallData(Dataset):
-    def __init__(self):
-        self.samples = CSV_to_List.get_dataset()
+    def __init__(self, augment):
+        self.samples = CSV_to_List.get_dataset(augment = augment, reduced_frequency=True, target_frequency_ratio=4)
+
 
     def __len__(self):
         return len(self.samples)
@@ -33,5 +36,3 @@ class MobifallData(Dataset):
          target = labels[self.samples[idx][1]]
 
          return torch.stack(data), target
-
-dataset = MobifallData()
